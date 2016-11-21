@@ -1,0 +1,103 @@
+
+#bookmarkleter body {
+    width: 80%;
+    margin: 3em;
+    background: #fff;
+    font-family: Arvo, Helvetica, sans-serif;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+#bookmarkleter h1, #bookmarkleter h2, #bookmarkleter h3, #bookmarkleter h4 {
+    margin: 2em 0 1em 0;
+}
+
+#bookmarkleter h4 {
+    margin: 0 0 0.5em 0;
+}
+
+#bookmarkleter form {
+    margin: auto;
+    width: 1024px;
+}
+
+#bookmarkleter fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#bookmarkleter textarea {
+    width: 100%;
+    height: 15em;
+    font-family: monospace;
+    font-size: .7em;
+}
+
+#bookmarkleter input[type=checkbox] {
+    vertical-align: middle;
+}
+
+#bookmarkleter #InputFields {
+    background: #ccc;
+    padding: 0.5em;
+}
+
+#bookmarkleter #OutputFields {
+    clear: left;
+    background: #d400c2;
+    padding: 0.5em;
+    color: #ff8f00;
+}
+
+#bookmarkleter #Labels {
+    padding: 0;
+}
+
+#bookmarkleter #InputLabel {
+    float: left;
+    background: #ccc;
+    padding: 0.25em 0.5em;
+}
+
+#bookmarkleter #OutputLabel {
+    float: right;
+    background: #cfc;
+    padding: 0.25em 0.5em;
+}
+
+#bookmarkleter #OutputLink {
+    font-size: 0.9em;
+}
+#bookmarkleter #OutputLink a{
+    color: #fff800;
+}
+
+#bookmarkleter #ErrorOutput {
+    overflow: hidden;
+    padding: 0.25em 0.5em;
+    text-align: center;
+    background-color: #fcc;
+    color: #f00;
+}
+
+#bookmarkleter .options {
+    margin: 2em 0;
+    padding: 1em;
+    border: solid 1px #ccc;
+}
+
+
+
+#bookmarkleter .disabled a {
+    color: #fff800;
+    cursor: default;
+}
+
+#bookmarkleter #OutputHref{
+
+}
+
+#bookmarkleter .pointer {
+    cursor: pointer;
+}

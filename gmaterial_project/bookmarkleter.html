@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<link href="http://fonts.googleapis.com/css?family=Arvo:regular,italic,bold" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+		<link rel="stylesheet" href="css/orange/material.min.css">
+		<link rel="stylesheet" href="css/pink/material.min.css">
+		<link rel="stylesheet" href="css/override.css">
+		<link rel="stylesheet" href="css/bookmarkleter.css">
+
+		<title>Bookmarkleter</title>
+
+	</head>
+
+	<body ng-app="bookmarkleter" id="bookmarkleter">
+
+		<header>
+			<h2>Bookmarkleter</h2>
+		</header>
+
+
+
+		<p>You have JavaScript. You need a <a href="http://en.wikipedia.org/wiki/Bookmarklet">bookmarklet</a>. This does that.</p>
+
+		<form onsubmit="return false;" ng-controller="appController">
+
+			<div class="options">
+
+				<h4>Options</h4>
+
+				<fieldset>
+					<input class="pointer mdl-checkbox__input" type="checkbox" ng-model="options.urlencode" ng-change="updateBookmarklet(options)"></input>
+					<label class="mdl-checkbox mdl-js-checkbox pointer" for="urlencode">URL-encode reserved characters: [space], %, &quot;, &lt;, &gt;, #, @, &amp;, ?</label>
+				</fieldset>
+
+				<fieldset>
+					<input class="pointer mdl-checkbox__input" type="checkbox" ng-model="options.anonymize" ng-change="updateBookmarklet(options)"></input>
+					<label class="mdl-checkbox mdl-js-checkbox pointer" for="anonymize">Wrap in an <a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression">IIFE</a> (anonymizing function).</label>
+				</fieldset>
+
+				<fieldset>
+					<input class="pointer mdl-checkbox__input" type="checkbox" ng-model="options.mangleVars" ng-change="updateBookmarklet(options)"></input>
+					<label class="mdl-checkbox mdl-js-checkbox pointer" for="mangle">Minify using <a href="https://github.com/mishoo/UglifyJS">UglifyJS</a>.</label>
+				</fieldset>
+
+				<fieldset>
+					<input class="pointer mdl-checkbox__input" type="checkbox" ng-model="options.jQuery" ng-change="updateBookmarklet(options)"></input>
+					<label class="mdl-checkbox mdl-js-checkbox pointer" for="reqjq">Make sure a modern version (&gt;= 1.7) of <a href="http://jquery.com">jQuery</a> is available for your code.</label>
+				</fieldset>
+
+			</div>
+
+			<fieldset id="InputFields">
+				<textarea ng-model="input" ng-change="updateBookmarklet(options)"></textarea>
+			</fieldset>
+
+			<fieldset id="Labels">
+				<label id="InputLabel" for="Input">JavaScript</label>
+				<label id="OutputLabel" for="Output">Bookmarklet</label>
+				<div id="ErrorOutput" ng-show="error">{{ error }}</div>
+			</fieldset>
+
+			<fieldset id="OutputFields">
+				<textarea ng-bind="output" id="Output" wrap="hard" readonly></textarea>
+				<div id="OutputLink" ng-class="output ? '' : 'disabled'">Drag this link to your bookmarks bar: <a id="OutputHref" ng-attr-href="{{ output }}" ICON="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB/klEQVQ4ja2Tu2qVURCFv7X/SxJJMBaCgZgIigQhD5BSsbDxPYKiz5BnUGNeQKOk1dLW2xtY2ATMpTBihJxwzr/3LIv/xESxERwYhtnMZc+aWQAYkqEa27TWW53V8Vs6G8v/EAFsL127q5RWEj6XpKmACdtNkhJA2CGpSzAM+zjQwBHvFz99fqXtG1cfTKh61EoYUF8TJYHB+LTd2Bcwshm6PKwjtNrJHjg6jzsCMBhKdQNtY5eC+vy+uB2N1IS1Wmd7roQx1BaSjW3a60t5tPNFcXBQVzMzNoAtJGRHYCzmUg6mO6MclsPOSPlowIV79zX//GW0N2+NusFxlOGIMC7FzmH1OUynEm5ymGLIYRXjEnYZjdLU8nK78GyzvbT5InvhSpdHHYVfsZRwU+fw6ToAY7nYNC0AZXs7D96+U/5+mAKh8hus1CXcAQ02Sf10kZKGu7vd/vpT7z9Zr7q9vaaamYaqguIeTgmg08fLi98SzLrfz8kuoaqiHP5IaXJSaaK1yxg2ehAlFPC9juK9SprNONskATZQOml6poSDGGV8MmN/B9FYTdh7dYnYQOlxK7XYSONIJShxerDjwe3++51N59gQwJuL83faipVin09m0qIFNaCaCJRUsLKJocQAOOoKH25/3Xn9r9z5uxjS1piia2f0TzqfUHrrDJ1/AqtRUJ+QQfrIAAAAAElFTkSuQmCC">My Bookmarklet</a></div>
+			</fieldset>
+
+		</form>
+
+
+		<script src="js/browser-tool.js"></script>
+
+	</body>
+
+</html>
